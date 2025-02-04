@@ -1,41 +1,27 @@
 public class MyPoint {
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
     // Default constructor (0,0)
     public MyPoint() {
-        this.x = 0;
-        this.y = 0;
+        this.x = 0.0;
+        this.y = 0.0;
     }
 
     // Constructor with given x and y
-    public MyPoint(int x, int y) {
+    public MyPoint(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    // Getter for x
-    public int getX() {
-        return x;
-    }
-
-    // Setter for x
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    // Getter for y
-    public int getY() {
-        return y;
-    }
-
-    // Setter for y
-    public void setY(int y) {
-        this.y = y;
-    }
+    // Getters and Setters
+    public double getX() { return x; }
+    public void setX(double x) { this.x = x; }
+    public double getY() { return y; }
+    public void setY(double y) { this.y = y; }
 
     // Set both x and y
-    public void setXY(int x, int y) {
+    public void setXY(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -46,20 +32,16 @@ public class MyPoint {
     }
 
     // Distance from this point to another (x, y)
-    public double distance(int x, int y) {
-        int xDiff = this.x - x;
-        int yDiff = this.y - y;
-        return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+    public double distance(double x, double y) {
+        return Math.sqrt((this.x - x) * (this.x - x) + (this.y - y) * (this.y - y));
     }
 
     // Distance from this point to another MyPoint
     public double distance(MyPoint another) {
-        int xDiff = this.x - another.x;
-        int yDiff = this.y - another.y;
-        return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+        return Math.sqrt((this.x - another.x) * (this.x - another.x) + (this.y - another.y) * (this.y - another.y));
     }
 
-    // Distance from this point to origin (0,0)
+    // Distance from this point to the origin (0,0)
     public double distance() {
         return Math.sqrt(x * x + y * y);
     }
