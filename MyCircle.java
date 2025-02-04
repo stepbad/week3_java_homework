@@ -1,16 +1,18 @@
 public class MyCircle {
     private MyPoint center;
     private int radius;
-    public static final double PI = 3.14; // Added static final PI
+    public static final double PI = 3.14;  // Keep PI as a constant
 
     // Default Constructor
     public MyCircle() {
-        this(new MyPoint(), 1);
+        this.center = new MyPoint();
+        this.radius = 1;
     }
 
     // Constructor with x, y, radius
     public MyCircle(int x, int y, int r) {
-        this(new MyPoint(x, y), r);
+        this.center = new MyPoint(x, y);
+        this.radius = r;
     }
 
     // Constructor with a MyPoint object
@@ -36,7 +38,7 @@ public class MyCircle {
     }
 
     public double getArea() {
-        return PI * radius * radius; // Using static PI instead of Math.PI
+        return PI * radius * radius;
     }
 
     public double getCircumference() {
