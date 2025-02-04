@@ -16,7 +16,6 @@ public class MyTriangle {
     }
 
     // toString() method
-    @Override
     public String toString() {
         return String.format("MyTriangle[v1=%s, v2=%s, v3=%s]", v1, v2, v3);
     }
